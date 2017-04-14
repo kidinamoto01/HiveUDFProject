@@ -1,9 +1,11 @@
 package com.andlinks.hive.function;
 
+import org.apache.hadoop.hive.ql.exec.UDF;
+
 /**
  * Created by suyu on 17-4-6.
  */
-public class AttackClassifyStrutsUDF {
+public class AttackClassifyStrutsUDF extends UDF {
     public int evaluate(String str) {
         int result = 0;
 

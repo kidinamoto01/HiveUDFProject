@@ -20,6 +20,8 @@ import java.util.Properties;
 import java.util.Random;
 
 public class HoppingWindowKafkaStream {
+
+
     /** Runs the streams program, writing to the "long-counts-all" topic.
      *
      * @param args Not used.
@@ -31,10 +33,8 @@ public class HoppingWindowKafkaStream {
         config.put(StreamsConfig.APPLICATION_ID_CONFIG, "hopping-window-kafka-streams");
         config.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
        // config.put(StreamsConfig.ZOOKEEPER_CONNECT_CONFIG, "localhost:2181");
-        config.put(StreamsConfig.KEY_SERDE_CLASS_CONFIG,
-                Serdes.ByteArray().getClass().getName());
-        config.put(StreamsConfig.VALUE_SERDE_CLASS_CONFIG,
-                Serdes.String().getClass().getName());
+        config.put(StreamsConfig.KEY_SERDE_CLASS_CONFIG, Serdes.ByteArray().getClass().getName());
+        config.put(StreamsConfig.VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
 
         KStreamBuilder builder = new KStreamBuilder();
 
