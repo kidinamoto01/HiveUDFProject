@@ -6,7 +6,7 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  * Created by suyu on 17-4-6.
  */
 public class AttackClassifyVagueUDF extends UDF {
-    public int evaluate(String str) {
+    public String evaluate(String str) {
         int result = 0;
 
         String[] tokens= new String[1];
@@ -16,9 +16,9 @@ public class AttackClassifyVagueUDF extends UDF {
         for (String s: tokens
                 ) {
             if(str.contains(s))
-                return 1;
+                return "模糊测试";
         }
-        return result;
+        return "Nothing";
 
     }
     public static void main(String[] args) {

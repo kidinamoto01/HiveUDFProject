@@ -6,7 +6,7 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  * Created by suyu on 17-4-6.
  */
 public class AttackClassifyStrutsUDF extends UDF {
-    public int evaluate(String str) {
+    public String evaluate(String str) {
         int result = 0;
 
         String[] tokens= new String[2];
@@ -17,9 +17,9 @@ public class AttackClassifyStrutsUDF extends UDF {
         for (String s: tokens
                 ) {
             if(str.contains(s))
-                return 1;
+                return "struts2漏洞";
         }
-        return result;
+        return "Nothing'";
 
     }
     public static void main(String[] args) {

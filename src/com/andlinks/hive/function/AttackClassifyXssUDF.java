@@ -7,7 +7,7 @@ import org.apache.hadoop.hive.ql.exec.UDF;
  */
 public class AttackClassifyXssUDF  extends UDF {
 
-    public int evaluate(String str) {
+    public String evaluate(String str) {
         int result = 0;
 
         String[] tokens= new String[21];
@@ -36,9 +36,9 @@ public class AttackClassifyXssUDF  extends UDF {
         for (String s: tokens
                 ) {
             if(str.contains(s))
-                return 1;
+                return "XSS跨站脚本攻击";
         }
-        return result;
+        return "Nothing";
 
     }
 

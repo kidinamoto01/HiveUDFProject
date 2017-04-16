@@ -13,7 +13,7 @@ public class AttackClassifySqlUDF extends UDF{
 
 
 
-    public int evaluate(String str) {
+    public String evaluate(String str) {
        int result = 0;
 
        String[] tokens= new String[21];
@@ -42,9 +42,9 @@ public class AttackClassifySqlUDF extends UDF{
         for (String s: tokens
              ) {
                 if(str.contains(s))
-                    return 1;
+                    return "SQL注入攻击";
         }
-       return result;
+       return "Nothing";
 
     }
 
